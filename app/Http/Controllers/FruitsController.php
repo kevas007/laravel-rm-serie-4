@@ -14,7 +14,8 @@ class FruitsController extends Controller
      */
     public function index()
     {
-        //
+        $fruits = Fruits::all();
+        return view('welcome', compact('fruits'));
     }
 
     /**
@@ -44,9 +45,10 @@ class FruitsController extends Controller
      * @param  \App\Models\Fruits  $fruits
      * @return \Illuminate\Http\Response
      */
-    public function show(Fruits $fruits)
+    public function show($id)
     {
-        //
+        $show = Fruits::find($id);
+        return view('pages.show', compact('show'));
     }
 
     /**

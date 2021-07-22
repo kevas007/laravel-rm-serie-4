@@ -14,7 +14,8 @@ class LegumesController extends Controller
      */
     public function index()
     {
-        //
+        $legumes =Legumes::all();
+        return view('pages.legumes', compact('legumes'));
     }
 
     /**
@@ -24,7 +25,7 @@ class LegumesController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +36,7 @@ class LegumesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -44,9 +45,10 @@ class LegumesController extends Controller
      * @param  \App\Models\Legumes  $legumes
      * @return \Illuminate\Http\Response
      */
-    public function show(Legumes $legumes)
+    public function show($id)
     {
-        //
+        $show =Legumes::find($id);
+        return view('pages.showLegumes', compact('show'));
     }
 
     /**
