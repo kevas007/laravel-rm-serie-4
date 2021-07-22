@@ -4,7 +4,7 @@
 
 @foreach ($legumes as $legume)
 <p>{{ $legume->id }}</p>
-<h1>{{ $legume->name }}</h1>
+<h1 class="{{ strlen($legume->name) >= 5 ? 'bg-primary' : '' }}">{{ $legume->name }}</h1>
 <p> {{ $legume->quantity }}</p>
 
 @endforeach
